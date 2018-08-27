@@ -9,7 +9,7 @@ class TaxCalculator {
     fun calc(year: Int, volume: Int, code: TransportCode): Double {
         val lifetime = currentYear - year
         val taxRate = getTaxRate(lifetime, code)
-        return taxRate * volume
+        return Math.ceil(taxRate * volume)
     }
 
     private fun getTaxRate(lifetime: Int, code: TransportCode): Double {
